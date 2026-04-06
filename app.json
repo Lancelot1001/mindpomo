@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/stats/stats",
+    "pages/settings/settings"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFF5EE",
+    "navigationBarTitleText": "西西弗柿",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#FFF5EE"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#FF7F50",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "专注",
+        "iconPath": "images/专注.jpg",
+        "selectedIconPath": "images/专注.jpg"
+      },
+      {
+        "pagePath": "pages/stats/stats",
+        "text": "统计",
+        "iconPath": "images/统计.jpg",
+        "selectedIconPath": "images/统计.jpg"
+      },
+      {
+        "pagePath": "pages/settings/settings",
+        "text": "设置",
+        "iconPath": "images/设置.jpg",
+        "selectedIconPath": "images/设置.jpg"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

@@ -1,0 +1,51 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <!-- 番茄钟主体 -->
+  <view class="timer-section">
+    <!-- 进度环组件 -->
+    <progress-ring 
+      progress="{{progress}}" 
+      time="{{displayTime}}" 
+      status="{{timerStatus}}"
+      size="480"
+    ></progress-ring>
+  </view>
+
+  <!-- 控制按钮 -->
+  <view class="controls">
+    <!-- 休息中显示结束休息按钮 -->
+    <button 
+      class="btn-primary {{timerStatus !== 'break' ? 'hidden' : ''}}" 
+      bindtap="endBreak"
+    >
+      结束休息
+    </button>
+
+    <!-- 开始/继续按钮 -->
+    <button 
+      class="btn-primary {{(timerStatus === 'running' || timerStatus === 'break') ? 'hidden' : ''}}" 
+      bindtap="startTimer"
+    >
+      {{timerStatus === 'paused' ? '继续' : '开始专注'}}
+    </button>
+
+    <!-- 暂停和重置按钮 -->
+    <view class="action-buttons {{timerStatus === 'running' ? '' : 'hidden'}}">
+      <button class="btn-secondary" bindtap="pauseTimer">暂停</button>
+      <button class="btn-secondary" bindtap="quitTimer">重置</button>
+    </view>
+  </view>
+
+  <!-- 底部统计 -->
+  <view class="footer" bindtap="goToStats">
+    <text class="stats-text">今日 {{todayStats.count}}次 · {{todayStats.duration}}</text>
+  </view>
+
+  <!-- 标签选择弹窗 -->
+  <tag-picker 
+    show="{{showTagPicker}}" 
+    tags="{{allTags}}"
+    bind:select="onTagSelect"
+    bind:close="onTagPickerClose"
+  ></tag-picker>
+</view>

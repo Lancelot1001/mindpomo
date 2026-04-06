@@ -1,0 +1,117 @@
+<!--pages/settings/settings.wxml-->
+<view class="container">
+  <!-- 专注时长设置 -->
+  <view class="card setting-card">
+    <view class="setting-header">
+      <text class="setting-icon">⏱</text>
+      <text class="setting-title">专注时长</text>
+    </view>
+    <view class="setting-content">
+      <view class="slider-wrapper">
+        <slider 
+          min="15" 
+          max="60" 
+          step="5" 
+          value="{{focusDuration}}" 
+          bindchange="onFocusDurationChange"
+          activeColor="#FF7F50"
+          backgroundColor="#FFE4D6"
+          block-color="#FF7F50"
+          block-size="24"
+        />
+        <view class="slider-labels">
+          <text>15分钟</text>
+          <text>60分钟</text>
+        </view>
+      </view>
+      <view class="current-value">
+        <text>{{focusDuration}} 分钟</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 休息时长设置 -->
+  <view class="card setting-card">
+    <view class="setting-header">
+      <text class="setting-icon">☕</text>
+      <text class="setting-title">休息时长</text>
+    </view>
+    <view class="setting-content">
+      <view class="break-item">
+        <text class="break-label">短休息</text>
+        <view class="break-selector">
+          <text class="break-value" bindtap="onShortBreakTap" data-value="{{shortBreak - 1}}">-</text>
+          <text class="break-value-text">{{shortBreak}} 分钟</text>
+          <text class="break-value" bindtap="onShortBreakTap" data-value="{{shortBreak + 1}}">+</text>
+        </view>
+      </view>
+      <view class="break-item">
+        <text class="break-label">长休息</text>
+        <view class="break-selector">
+          <text class="break-value" bindtap="onLongBreakTap" data-value="{{longBreak - 5}}">-</text>
+          <text class="break-value-text">{{longBreak}} 分钟</text>
+          <text class="break-value" bindtap="onLongBreakTap" data-value="{{longBreak + 5}}">+</text>
+        </view>
+      </view>
+      <view class="break-hint">每4个周期后触发长休息</view>
+    </view>
+  </view>
+
+  <!-- 提醒设置 -->
+  <view class="card setting-card">
+    <view class="setting-header">
+      <text class="setting-icon">🔔</text>
+      <text class="setting-title">提醒设置</text>
+    </view>
+    <view class="setting-content">
+      <view class="toggle-item">
+        <text class="toggle-label">震动提醒</text>
+        <switch 
+          checked="{{vibration}}" 
+          bindchange="onVibrationChange"
+          color="#FF7F50"
+        />
+      </view>
+      <view class="toggle-item">
+        <text class="toggle-label">声音提醒</text>
+        <switch 
+          checked="{{sound}}" 
+          bindchange="onSoundChange"
+          color="#FF7F50"
+        />
+      </view>
+      <view class="toggle-item">
+        <text class="toggle-label">自动开始休息</text>
+        <switch 
+          checked="{{autoStartBreak}}" 
+          bindchange="onAutoStartBreakChange"
+          color="#FF7F50"
+        />
+      </view>
+    </view>
+  </view>
+
+  <!-- 数据管理 -->
+  <view class="card setting-card">
+    <view class="setting-header">
+      <text class="setting-icon">📋</text>
+      <text class="setting-title">数据管理</text>
+    </view>
+    <view class="setting-content">
+      <view class="action-item" bindtap="onExportData">
+        <text class="action-label">导出数据</text>
+        <text class="action-arrow">></text>
+      </view>
+      <view class="action-item danger" bindtap="onClearRecords">
+        <text class="action-label">清空记录</text>
+        <text class="action-arrow">></text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 关于 -->
+  <view class="about-section">
+    <text class="about-text">西西弗柿 v1.0</text>
+    <text class="about-text">专注，是一种修行</text>
+  </view>
+</view>

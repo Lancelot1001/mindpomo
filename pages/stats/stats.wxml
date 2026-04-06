@@ -1,0 +1,66 @@
+<!--pages/stats/stats.wxml-->
+<view class="container">
+  <!-- 本周专注卡片 -->
+  <view class="card week-card">
+    <view class="card-title">本周专注</view>
+    <view class="progress-bar">
+      <view class="progress-fill" style="width: {{weekProgress}}%"></view>
+    </view>
+    <view class="progress-text">
+      <text class="current">{{weekData.formattedDuration}}</text>
+      <text class="goal">/ {{weekData.formattedGoal}}</text>
+    </view>
+  </view>
+
+  <!-- 今日卡片 -->
+  <view class="card today-card">
+    <view class="card-title">今日</view>
+    <view class="today-stats">
+      <view class="stat-item">
+        <text class="stat-value">{{todayData.count}}</text>
+        <text class="stat-label">次</text>
+      </view>
+      <view class="stat-divider"></view>
+      <view class="stat-item">
+        <text class="stat-value">{{todayData.formattedDuration}}</text>
+        <text class="stat-label">时长</text>
+      </view>
+    </view>
+    <view class="progress-bar small">
+      <view class="progress-fill" style="width: {{todayProgress}}%"></view>
+    </view>
+    <view class="progress-text small">
+      <text>日目标 1h30m</text>
+    </view>
+  </view>
+
+  <!-- 日历视图 -->
+  <view class="card calendar-card">
+    <view class="card-title">📅 本周日历</view>
+    <calendar-view 
+      dates="{{weekDates}}" 
+      focusData="{{weekFocusData}}"
+    ></calendar-view>
+  </view>
+
+  <!-- 标签分布 -->
+  <view class="card tags-card">
+    <view class="card-title">📊 标签分布</view>
+    <view class="tags-list" wx:if="{{tagDistribution.length > 0}}">
+      <view 
+        wx:for="{{tagDistribution}}" 
+        wx:key="tag"
+        class="tag-row"
+      >
+        <text class="tag-name">{{item.tag}}</text>
+        <view class="tag-bar-wrapper">
+          <view class="tag-bar" style="width: {{item.percentage}}%"></view>
+        </view>
+        <text class="tag-percentage">{{item.percentage}}%</text>
+      </view>
+    </view>
+    <view class="empty-tip" wx:else>
+      <text>暂无数据</text>
+    </view>
+  </view>
+</view>

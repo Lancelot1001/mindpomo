@@ -1,0 +1,32 @@
+<!--components/TagPicker/TagPicker.wxml-->
+<view class="tag-picker-mask {{show ? 'show' : ''}}" bindtap="onClose">
+  <view class="tag-picker-content {{show ? 'show' : ''}}" catchtap="onContentTap">
+    <!-- 标题 -->
+    <view class="picker-header">
+      <text class="picker-title">选择专注标签</text>
+    </view>
+    
+    <!-- 标签列表 -->
+    <view class="tag-list">
+      <view 
+        wx:for="{{tags}}" 
+        wx:key="index"
+        class="tag-item {{selectedTag === item ? 'selected' : ''}}"
+        bindtap="onSelectTag"
+        data-tag="{{item}}"
+      >
+        {{item}}
+      </view>
+      
+      <!-- 自定义标签 -->
+      <view class="tag-item add-tag" bindtap="onAddTag">
+        + 自定义
+      </view>
+    </view>
+    
+    <!-- 开始按钮 -->
+    <button class="btn-start" bindtap="onStartFocus">
+      开始专注
+    </button>
+  </view>
+</view>

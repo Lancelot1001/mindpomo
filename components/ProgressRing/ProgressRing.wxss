@@ -1,0 +1,78 @@
+/* components/ProgressRing/ProgressRing.wxss */
+
+.progress-ring-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ring-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 背景环 */
+.ring-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--primary-bg);
+}
+
+/* 进度环容器 */
+.ring-progress {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--primary) 0deg,
+    var(--primary) var(--progress-deg, 360deg),
+    transparent var(--progress-deg, 360deg),
+    transparent 360deg
+  );
+  mask: radial-gradient(
+    transparent 44%,
+    black 44.5%,
+    black 55.5%,
+    transparent 56%
+  );
+  -webkit-mask: radial-gradient(
+    transparent 44%,
+    black 44.5%,
+    black 55.5%,
+    transparent 56%
+  );
+}
+
+/* 中心内容 */
+.ring-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  width: 60%;
+  height: 60%;
+  background: var(--card);
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+}
+
+.time-display {
+  font-size: var(--font-size-3xl);
+  font-weight: 600;
+  color: var(--text-primary);
+  font-family: var(--font-family-mono, monospace);
+  line-height: 1;
+}
+
+.status-text {
+  font-size: var(--font-size-sm);
+  color: var(--text-tertiary);
+  margin-top: 16rpx;
+}

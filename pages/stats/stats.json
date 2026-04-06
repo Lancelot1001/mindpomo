@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "专注统计",
+  "usingComponents": {
+    "calendar-view": "/components/CalendarView/CalendarView"
+  }
+}

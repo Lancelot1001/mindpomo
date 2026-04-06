@@ -1,0 +1,121 @@
+/* pages/index/index.wxss */
+
+/* 容器 */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0 32rpx;
+  background: var(--bg);
+}
+
+/* 顶部标题 */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 32rpx;
+  padding-bottom: 24rpx;
+}
+
+.title {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.settings-icon {
+  padding: 16rpx;
+}
+
+.icon {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+/* 计时器区域 */
+.timer-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32rpx 0;
+}
+
+/* 控制按钮 */
+.controls {
+  height: 120rpx;
+  padding: 12rpx 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-primary {
+  width: 640rpx;
+  height: 96rpx;
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  border-radius: 48rpx;
+  background: var(--primary);
+  color: #FFFFFF;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary:active {
+  background: var(--primary-dark);
+  transform: scale(0.98);
+}
+
+.btn-primary.hidden {
+  display: none;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 32rpx;
+}
+
+.action-buttons.hidden {
+  display: none;
+}
+
+.btn-secondary {
+  width: 240rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  border-radius: 36rpx;
+  background: var(--card);
+  color: var(--primary);
+  border: 2rpx solid var(--primary);
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-secondary:active {
+  background: var(--primary-bg);
+}
+
+/* 底部统计 */
+.footer {
+  padding: 32rpx 0;
+  text-align: center;
+}
+
+.stats-text {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+/* 隐藏类 */
+.hidden {
+  display: none;
+}

@@ -1,0 +1,34 @@
+<!--components/ProgressRing/ProgressRing.wxml-->
+<view class="progress-ring-container">
+  <view class="ring-wrapper" style="width: {{size}}rpx; height: {{size}}rpx;">
+    <!-- 背景环 -->
+    <view class="ring-bg"></view>
+    
+    <!-- 进度环 -->
+    <view class="ring-progress" style="transform: rotate({{progressRotation}}deg);">
+      <view class="ring-progress-left" wx:if="{{progress <= 50}}"></view>
+      <view class="ring-progress-right"></view>
+    </view>
+    
+    <!-- 中心内容 -->
+    <view class="ring-content">
+      <!-- 状态图标 -->
+      <view class="status-icon">
+        <text wx:if="{{status === 'running'}}">⏰</text>
+        <text wx:elif="{{status === 'break'}}">☕</text>
+      </view>
+      
+      <!-- 时间显示 -->
+      <view class="time-display">{{time}}</view>
+      
+      <!-- 状态文字 -->
+      <view class="status-text">
+        <text wx:if="{{status === 'idle'}}">准备就绪</text>
+        <text wx:elif="{{status === 'running'}}">专注中...</text>
+        <text wx:elif="{{status === 'paused'}}">已暂停</text>
+        <text wx:elif="{{status === 'break'}}">休息中</text>
+        <text wx:else>完成！</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,63 @@
+/* components/CalendarView/CalendarView.wxss */
+
+.calendar-view {
+  width: 100%;
+}
+
+.week-header {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 16rpx;
+}
+
+.week-day {
+  flex: 1;
+  text-align: center;
+  font-size: var(--font-size-xs);
+  color: var(--text-tertiary);
+}
+
+.week-grid {
+  display: flex;
+  justify-content: space-around;
+}
+
+.day-cell {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.day-circle {
+  width: 64rpx;
+  height: 64rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2rpx solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.day-circle.active {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.day-circle.today {
+  border-color: var(--primary);
+}
+
+.day-number {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.day-circle.active .day-number {
+  color: #FFFFFF;
+}
+
+.day-circle.today:not(.active) .day-number {
+  color: var(--primary);
+  font-weight: 600;
+}

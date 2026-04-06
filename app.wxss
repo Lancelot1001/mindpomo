@@ -1,0 +1,240 @@
+/* app.wxss - 全局样式 */
+
+/* 设计系统CSS变量 */
+page {
+  /* 主色 - 珊瑚橙 */
+  --primary: #FF7F50;
+  --primary-light: #FF6B35;
+  --primary-dark: #E55A3C;
+  --primary-bg: #FFE4D6;
+
+  /* 辅色 - 海贝色 */
+  --bg: #FFF5EE;
+  --card: #FFFFFF;
+
+  /* 中性色 */
+  --text-primary: #2D2D2D;
+  --text-secondary: #666666;
+  --text-tertiary: #999999;
+  --border: #E5E7EB;
+
+  /* 语义色 */
+  --success: #4CAF50;
+  --success-light: #dcfce7;
+  --warning: #f59e0b;
+  --warning-light: #fef3c7;
+  --error: #ef4444;
+  --error-light: #fee2e2;
+  --info: #3b82f6;
+
+  /* 休息状态 */
+  --rest-color: #6BCB77;
+
+  /* 间距 */
+  --space-1: 8rpx;
+  --space-2: 16rpx;
+  --space-3: 24rpx;
+  --space-4: 32rpx;
+  --space-5: 40rpx;
+  --space-6: 48rpx;
+  --space-8: 64rpx;
+
+  /* 圆角 */
+  --radius-sm: 8rpx;
+  --radius-md: 16rpx;
+  --radius-lg: 24rpx;
+  --radius-xl: 32rpx;
+  --radius-full: 9999rpx;
+
+  /* 阴影 */
+  --shadow-sm: 0 2rpx 8rpx rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4rpx 16rpx rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8rpx 32rpx rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 8rpx 32rpx rgba(255, 127, 80, 0.3);
+
+  /* 动画 */
+  --transition-fast: 150ms;
+  --transition-normal: 300ms;
+  --transition-slow: 500ms;
+
+  /* 字体 */
+  --font-size-xs: 24rpx;
+  --font-size-sm: 28rpx;
+  --font-size-base: 32rpx;
+  --font-size-lg: 36rpx;
+  --font-size-xl: 40rpx;
+  --font-size-2xl: 48rpx;
+  --font-size-3xl: 60rpx;
+  --font-size-timer: 160rpx;
+}
+
+/* 全局重置 */
+view, text, button, input, textarea {
+  box-sizing: border-box;
+}
+
+/* 全局字体 */
+page {
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', sans-serif;
+  font-size: 32rpx;
+  color: var(--text-primary);
+  background-color: var(--bg);
+  line-height: 1.5;
+}
+
+/* 通用容器 */
+.container {
+  padding: 0 var(--space-4);
+  min-height: 100vh;
+}
+
+/* 通用卡片 */
+.card {
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-sm);
+}
+
+/* 主按钮 */
+.btn-primary {
+  background: var(--primary);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  padding: 24rpx 48rpx;
+  text-align: center;
+  transition: all var(--transition-fast);
+}
+
+.btn-primary:active {
+  background: var(--primary-dark);
+  transform: scale(0.98);
+}
+
+.btn-primary:disabled {
+  background: var(--border);
+  color: var(--text-tertiary);
+}
+
+/* 次要按钮 */
+.btn-secondary {
+  background: var(--card);
+  color: var(--primary);
+  border: 2rpx solid var(--primary);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  padding: 16rpx 32rpx;
+  text-align: center;
+  transition: all var(--transition-fast);
+}
+
+.btn-secondary:active {
+  background: var(--primary-bg);
+}
+
+/* 标题样式 */
+.title-h1 {
+  font-size: var(--font-size-3xl);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.title-h2 {
+  font-size: var(--font-size-2xl);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.title-h3 {
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* 正文样式 */
+.text-body {
+  font-size: var(--font-size-base);
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.text-small {
+  font-size: var(--font-size-xs);
+  color: var(--text-tertiary);
+}
+
+/* Flex工具类 */
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 动画类 */
+.fade-in {
+  animation: fadeIn var(--transition-normal) ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.slide-up {
+  animation: slideUp var(--transition-normal) ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* 弹跳动画 */
+.bounce {
+  animation: bounce 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

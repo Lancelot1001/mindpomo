@@ -1,0 +1,20 @@
+<!--components/CalendarView/CalendarView.wxml-->
+<view class="calendar-view">
+  <!-- 星期标题 -->
+  <view class="week-header">
+    <text wx:for="{{weekDays}}" wx:key="index" class="week-day">{{item}}</text>
+  </view>
+  
+  <!-- 日期网格 -->
+  <view class="week-grid">
+    <view 
+      wx:for="{{dates}}" 
+      wx:key="index"
+      class="day-cell"
+    >
+      <view class="day-circle {{focusData[item] ? 'active' : ''}} {{isToday(item) ? 'today' : ''}}">
+        <text class="day-number">{{getDay(item)}}</text>
+      </view>
+    </view>
+  </view>
+</view>

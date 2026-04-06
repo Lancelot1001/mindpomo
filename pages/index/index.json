@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "西西弗柿",
+  "usingComponents": {
+    "progress-ring": "/components/ProgressRing/ProgressRing",
+    "tag-picker": "/components/TagPicker/TagPicker"
+  }
+}
