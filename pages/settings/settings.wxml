@@ -111,7 +111,7 @@
 
   <!-- 关于 -->
   <view class="about-section">
-    <text class="about-text">西西弗柿 v1.0</text>
+    <text class="about-text">番茄心流 v1.0</text>
     <text class="about-text">专注，是一种修行</text>
   </view>
 </view>

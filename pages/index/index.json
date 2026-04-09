@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "西西弗柿",
+  "navigationBarTitleText": "番茄心流",
   "usingComponents": {
     "progress-ring": "/components/ProgressRing/ProgressRing",
     "tag-picker": "/components/TagPicker/TagPicker"

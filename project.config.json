@@ -1,8 +1,8 @@
 {
   "miniprogramRoot": "./",
-  "projectname": "西西弗柿",
+  "projectname": "番茄心流",
   "compileType": "miniprogram",
-  "libVersion": "3.3.4",
+  "libVersion": "3.15.1",
   "setting": {
     "urlCheck": false,
     "es6": true,
@@ -52,7 +52,7 @@
     "tabIndent": "insertSpaces",
     "tabSize": 2
   },
-  "appid": "wx4a1fd776fe7c88d1",
+  "appid": "wxd664749b69a427f4",
   "simulatorPluginLibVersion": {},
   "packOptions": {
     "ignore": [],

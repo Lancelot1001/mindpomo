@@ -4,10 +4,11 @@
     "pages/stats/stats",
     "pages/settings/settings"
   ],
+  "lazyCodeLoading": "requiredComponents",
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#FFF5EE",
-    "navigationBarTitleText": "西西弗柿",
+    "navigationBarTitleText": "番茄心流",
     "navigationBarTextStyle": "black",
     "backgroundColor": "#FFF5EE"
   },
